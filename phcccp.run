@@ -1,0 +1,13 @@
+reset;
+
+
+# Loading the model
+model phcccp.mod;
+
+# Loading the data
+data phcccp.dat;
+
+# Choosing the solver
+option solver cplex;
+
+solve;

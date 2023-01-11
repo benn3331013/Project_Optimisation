@@ -8,11 +8,12 @@ set K := 1 .. d;
 set I := 1 .. n; 
 
    param a{I,K}      >= 0; # The coordinates of the individuals
-   param q{I}              # The demands of the individual i     
+   param q{I}              # The demands of the individual i
 
    param p integer   > 0;  # the number of clusters
 # J : the set of clusters |I| > |J|
 set J := 1 .. p; 
+   # TODO : integers
    param Q{J}        > 0;  # Max capacities
 
 
