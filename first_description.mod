@@ -45,7 +45,7 @@ subject to c34{j in J} :
 
 # (35) The geometric centers of the clusters
 subject to c35{j in J} : 
-	sum{i in I} a[i] * y[i,j] <= n[j] * x[j]; # is actually an equality
+	sum{i in I} a[i,j] * y[i,j] <= n[j] * x[j]; # is actually an equality
 
 # (36) Assure we do not overload a cluster
 subject to c36{j in J} : 

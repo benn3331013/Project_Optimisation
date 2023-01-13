@@ -2,7 +2,7 @@ reset;
 
 
 # Loading the model
-model phcccp.mod;
+model PHCCCP.mod;
 
 # Loading the data
 data phcccp.dat;
