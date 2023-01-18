@@ -11,3 +11,9 @@ data phcccp.dat;
 option solver knitro;
 
 solve;
+
+# >> means append
+# > overwrites
+display x > "X.txt";
+
+display y > "Y.txt";

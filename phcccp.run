@@ -5,9 +5,15 @@ reset;
 model phcccp.mod;
 
 # Loading the data
-data phcccp.dat;
+data test.dat;
 
 # Choosing the solver
 option solver knitro;
 
 solve;
+
+# >> means append
+# > overwrites
+display x > "X.txt";
+
+display y > "Y.txt";

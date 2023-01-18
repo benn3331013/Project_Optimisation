@@ -21,7 +21,7 @@ param a {I,K}; 			# The coordinates of the individuals
 
 #-- Variables
 
-var x{J,K} ;  			#-- 1 if the individual i is assigned to the median j, 0 otherwise
+var x{J,K};  			#-- 1 if the individual i is assigned to the median j, 0 otherwise
 var n {J} integer >= 0; 	#-- Number of individuals in the cluster j 
 var y {I,J} binary; 	#-- Decision variable : 1 if the individual i is in j, 0 otherwise
 
