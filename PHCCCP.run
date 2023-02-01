@@ -5,7 +5,7 @@ reset;
 model PHCCCP.mod;
 
 # Loading the data
-data phcccp.dat;
+data diverge.dat;
 
 # Choosing the solver
 option solver knitro;

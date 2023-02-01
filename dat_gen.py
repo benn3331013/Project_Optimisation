@@ -5,8 +5,9 @@ import re
 def gen_clustering(n_clusters : int, pp_cluster : list):
     # Map is [0,10]x[0,10]
 
-    individuals = [np.random.normal(loc=np.random.uniform(0,10), scale=np.random.uniform(0, 2), size=(pp_cluster[i], 2)) for i in range(n_clusters)]
-
+    #individuals = [np.random.normal(loc=np.random.uniform(0,10), scale=np.random.uniform(0, 2), size=(pp_cluster[i], 2)) for i in range(n_clusters)]
+    individuals = np.array([np.array([np.random.uniform(0,10, size=(2)) for j in range(pp_cluster[i])]) for i in range(n_clusters)])
+    print(individuals)
     file = open('test.dat', 'w')
 
     file.write("param d := 2;\n\n")
@@ -45,11 +46,12 @@ def gen_clustering(n_clusters : int, pp_cluster : list):
 
         print(individuals[i][:,0], individuals[i][:,0])
 
-        plt.scatter(individuals[i][:,0], individuals[i][:,1], label="Cluster {}".format(i))
+        plt.scatter(individuals[i][:,0], individuals[i][:,1], s=10., label="Cluster {}".format(i), c='b')
 
     #plt.show()
 
     plt.savefig("test.png")
 
 if __name__ == "__main__":
-    gen_clustering(3, [7, 7, 7])
+#    gen_clustering(10, [5, 5, 5, 5, 5, 5, 5, 5, 7, 7])
+    gen_clustering(10, [5, 5, 5, 5, 5, 5, 5, 5, 7, 7])

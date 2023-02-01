@@ -1,0 +1,25 @@
+param begin_PLACE     := 1;
+param end_PLACE       := 10;
+param begin_CLUSTER   := 0;
+param end_CLUSTER     := 2;
+param begin_DIMENSION := 1;
+param end_DIMENSION   := 2;
+param instance        := 0;
+
+  
+param	Q:= 
+0	4
+1	4
+2	4;
+  
+param :	x y :=  
+1	214.5	-110.5
+2	274.5	-210.5
+3	400.5	-158.5
+4	426.5	-292.5
+5	344.5	-211.5
+6	435.5	-226.5
+7	427.5	-177.5
+8	611.5	-63.5
+9	524.5	-213.5
+10	468.5	-209.5;

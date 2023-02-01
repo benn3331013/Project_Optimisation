@@ -26,38 +26,34 @@ def visualize_clustering(f_input, f_out1, f_out2):
 
         count += 1
 
-    print(individuals)
+#    print(individuals)
 
-    centroids_txt = out1.read().replace('  ', '').split('\n')[1:-3]
+#   Getting the centroids
+    with open('X.txt', 'r') as f:
+        lines = f.readlines()
+        coordinates = [float(line.split()[-1]) for line in lines[1:-2]]
+        clusters_x = [coordinates[i] for i in range(0, len(coordinates), 2)]
+        clusters_y = [coordinates[i] for i in range(1, len(coordinates), 2)]
 
 
-    centroids = np.zeros((int(len(centroids_txt)/2), 2))
-    count = 0
-    print(centroids_txt)
-    for txt in centroids_txt:
-        txt = txt.split(' ')
-        centroids[int(count/2), count%2] = txt[-1]
+#   Getting the individual's colours
+    plt_colours = ['b', 'g', 'r', 'c', 'm', 'y', 'k', '0.30', '0.60', '0.90', '0.75', '0.15', '0.45']
+    
+    with open('Y.txt', 'r') as f:
+        lines = f.readlines()
+        data = [line.split() for line in lines[2:-2]]
+        colours_index = [ plt_colours[[i for i, x in enumerate(row[1:], 1) if x == "1"][0]-1] for row in data]
 
-        count += 1
 
-    print(centroids)
+    plt.scatter(individuals[:,0], individuals[:,1], s=10., c = colours_index)
 
-    clusters_txt = out2.read().replace('  ', '').split('\n')[1:-3]
-    #clusters = np.zeros()
-
-    one_clusters = [txt for txt in clusters_txt if txt[-1] == '1']
-
-    clusters = np.array([int(txt.split(' ')[1]) for txt in one_clusters])
-
-    print(clusters)
-
-    plt.scatter(individuals[:,0], individuals[:,1], c = clusters)
-
-    plt.scatter(clusters[:,0], clusters[:,1], '+', label='centroids')
+    print(clusters_x)
+    print(clusters_y)
+    plt.scatter(clusters_x, clusters_y, s=200., marker='+', label='centroids', c=plt_colours[:len(clusters_x)])
 
     plt.legend()
 
-    plt.show()
+    plt.savefig("fuck_you.png")
 
     input.close()
 
