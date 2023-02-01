@@ -363,7 +363,7 @@ param demands :=
 	174 1
 ;
 
-param p := 25;
+param p := 26;
 
 param	Q:= 
 0	1
