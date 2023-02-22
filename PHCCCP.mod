@@ -34,7 +34,7 @@ var w {I,I,J};   # New variable
 
 minimize Obj :                   # minimize objective function
    # sum {i in I, j in J} sqrt( ( sum {k in K} (a[i,k] - x[j,k])^2 ) + 0.0000001) * y[i,j];
-   sum {i in I, j in J} sqrt( ( sum {k in K} (a[i,k] - 1 / n[j] * (sum {l in I} (a[l] * w[l,i,j])))^2 ) + 0.0000001); # New objective function
+   sum {i in I, j in J} sqrt( ( sum {k in K} (a[i,k] - 1 / n[j] * (sum {l in I} (a[l, k] * w[l,i,j])))^2 ) + 0.0000001); # New objective function
 
 
 #-- Constraints
