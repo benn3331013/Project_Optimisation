@@ -2,10 +2,10 @@ reset;
 
 
 # Loading the model
-model PHCCCP.mod;
+model PHCCCP_con.mod;
 
 # Loading the data
-data test_2_papier.dat;
+data instance_4_papier.dat;
 
 # Choosing the solver
 option solver knitro;

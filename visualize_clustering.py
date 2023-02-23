@@ -63,4 +63,4 @@ def visualize_clustering(f_input, f_out1, f_out2):
 
 
 if __name__ == "__main__":
-    visualize_clustering("test_2_papier.dat", "X.txt", "Y.txt")
+    visualize_clustering("test.dat", "X.txt", "Y.txt")

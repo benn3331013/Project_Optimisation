@@ -40,7 +40,8 @@ subject to C33 {i in I}:
 	
 # (34) sets the number of individuals in each cluster
 subject to C34 {j in J}:
-	sum {i in I} y[i,j] <= n[j];
+	sum {i in I} y[i,j]^2 <= n[j];
+	
 
 # (35) The geometric centers of the clusters	
 subject to C35 {j in J, k in K}:
@@ -49,3 +50,4 @@ subject to C35 {j in J, k in K}:
 # (36) Assure we do not overload a cluster
 subject to C36 {j in J}:
 	sum {i in I} demands[i] * y[i,j] <= Q[j];
+	
